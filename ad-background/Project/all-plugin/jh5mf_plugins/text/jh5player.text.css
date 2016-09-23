@@ -1,0 +1,50 @@
+.jh5player-text {
+  color: #4e4e4e;
+  font-size: 18px;
+}
+.jh5player-text.off {
+  visibility: hidden;
+}
+.jh5player-text .text-inner-div {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  margin: 0;
+  padding: 5px;
+
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none; 
+}
+
+.track-event-editing .jh5player-text .text-inner-div {
+  -moz-user-select: text;
+  -webkit-user-select: text;
+  -ms-user-select: text;
+  user-select: text; 
+}
+
+.jh5player-text .text-inner-div::selection {
+    background-color: #3399ff;
+    color: #fff;
+}
+.jh5player-text .text-inner-div::-moz-selection {
+    background-color: #3399ff;
+    color: #fff;
+}
+.jh5player-text .text-inner-div::-webkit-selection {
+    background-color: #3399ff;
+    color: #fff;
+}
+.jh5player-text .text-inner-div *::selection {
+    background-color: #3399ff;
+    color: #fff;
+}
+.jh5player-text .text-inner-div *::-moz-selection {
+    background-color: #3399ff;
+    color: #fff;
+}
+.jh5player-text .text-inner-div *::-webkit-selection {
+    background-color: #3399ff;
+    color: #fff;
+}

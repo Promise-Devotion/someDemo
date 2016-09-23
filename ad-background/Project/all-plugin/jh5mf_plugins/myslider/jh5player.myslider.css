@@ -1,0 +1,138 @@
+.jh5player-myslider {
+  color: #333;
+  display: block;
+  word-wrap: break-word;
+  width: 100%;
+  height: 100%;
+}
+.jh5player-myslider.off {
+  display: none;
+}
+.jh5player-wrapper {
+	text-align: center;
+	justify-content: center;
+    align-items: center;
+    display:flex;
+}
+.jh5player-slideImg {
+	max-width: 100%;
+	max-height: 100%;
+}
+.jh5player-elem-box .swiper-slide{
+	display: block !important;
+}
+.jh5player-elem-box img {
+	display: block !important;
+}
+
+.btnPlay {
+	background-color: #4E4E4E;
+    border: 1px solid #686868;
+    width: 183px;
+    height: 29px;
+    font-size: 18px;
+    color: #f5f5f5;
+    outline: none;
+}
+.swiper-style {
+	margin-top: 10px;
+    margin-bottom: 5px;
+    color: #f5f5f5;
+}
+.btnPlay:hover {
+	background-color: #333;
+	border-color: #727272;
+}
+.btnPlay:active {
+	background-color:#444;
+}
+.swiper-pagination-bullet{
+	width: 14px;
+	height: 14px;
+}
+.swiper-pagination {
+	background-color: rgba(255, 255, 255, 0);
+}
+
+
+#sortable-handlers {
+	margin:5px 0;
+	background-color: #555;
+    padding: 10px 5px;
+}
+
+.item-slide {
+	width: 172px;
+	background-color: #333;
+	border: 1px solid #686868;
+	border-radius: 3px;
+	height: 42px;
+	line-height: 40px;
+	margin-bottom: 2px;
+}
+.item-slide.clone {
+	color: #fff !important; 
+}
+.ico-slide {
+	display: inline-block;
+	width: 75px;
+	height: 40px;
+}
+.imgHandler {
+	margin-right: 10px;
+	cursor: move;
+    float: right;
+    margin-top: 15px;
+    font-size: 14px;
+}
+.imgHandler:hover, .imgHandler:active {
+	background-color: #969696;
+}
+
+.imgRemove {
+	margin-right: 10px;
+    float: right;
+    margin-top: 15px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.imgPreview {
+	margin-right: 10px;
+    float: right;
+    margin-top: 15px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.fade-opacity {
+	opacity: 0 !important;
+} 
+.swiper-slide-active {
+	opacity: 1 !important;
+}
+.jh5player-elem-box .swiper-slide {
+	background-color: rgba(255, 255, 255, 0) !important;
+}
+.swiper-cube-shadow {
+	opacity: 0 !important;
+}
+
+.disabledInput {
+	background-color: #797979 !important;
+}
+
+.jh5player-elem-box .swiper-container-horizontal>.swiper-pagination {
+	bottom: 30px;
+}
+
+.jh5player-elem-box .swiper-container-vertical>.swiper-pagination {
+	left: 94%;
+    top: 50%;
+    height: auto;
+}
+
+
+
+
+

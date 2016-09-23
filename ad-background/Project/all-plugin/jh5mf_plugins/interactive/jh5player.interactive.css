@@ -1,0 +1,20 @@
+.jh5player-interactive {
+  display: block;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+.jh5player-interactive.off {
+  display: none;
+}
+.k-list>.k-state-selected {
+	color: #D2D1D0 !important;
+	background-color: #4E4E4E;
+	border-color: transparent;
+}
+.k-list>.k-state-selected.k-state-focused:hover {
+	background-color: #;
+}
+
+
+

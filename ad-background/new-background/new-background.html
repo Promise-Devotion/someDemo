@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>new-background</title>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/kendo.common-fiori.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/kendo.fiori.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/simple-line-icons.min.css">
+
+    <script src="./js/jquery-1.9.1.js"></script>
+    <script src="./js/bootstrap.js"></script>
+    <script src="./js/kendo.all.min.js"></script>
+    <script src="./js/modal.js"></script>
+
+    <style>
+        #myModal .modal-body input,select{
+            width: 90%;
+        }
+        #adSource{
+            margin:0 auto;
+        }
+        #adSource .adThumbnail-container{
+            background-color: cyan;
+        }
+    </style>
+</head>
+<body>
+
+<h2>创建模态框（Modal）</h2>
+<!-- 按钮触发模态框-->
+<button class="btn" data-toggle="modal" data-target="#myModal">开始模态框</button>
+
+<!-- 模态框（Modal）-->
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true">×
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    新建背景
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form action="">
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <div>
+                                <label for="backGroundName">背景名称</label>
+                                <div class="controls" >
+                                    <input type="text" name="backGroundName" id="backGroundName" data-bind="value: backGroundName">
+                                </div>
+                            </div>
+                            <div>
+                                <label for="description">背景描述</label>
+                                <div class="controls">
+                                    <textarea name="description" id="description" cols="30" rows="10" data-bind="value: backgroundDescription"></textarea>
+                                </div>
+                            </div>
+                            <div>
+                            	<label>选择背景文件</label>
+                            	<div class="controls">
+                            		<input type="button" value="点击选择背景">
+                            	</div>
+                            </div>
+                           
+                        </div>
+                        <div class="form-group col-md-6">
+                            <div id="adSource">
+                                <div class="adThumbnail-container" style="width: 100px;height:100px;">
+                                    <a href="#"></a>
+                                </div>
+                                <div class="controls">
+                                    <label>文件名</label>
+                                    <span>鼹鼠</span>
+                                </div>
+                                <div class="controls">
+                                    <label>类型</label>
+                                    <span>MP4</span>
+                                </div>
+                                <div class="controls">
+                                    <label>大小</label>
+                                    <span>15M</span>
+                                </div>
+                                <div class="controls">
+                                    <label class="fileSize" id="attribute">属性</label>
+                                    <span>1080P | ANDRIOD</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="form-group modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" data-bind>OK</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">CANCEl</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+</body>
+<script>
+    $(document).ready(function() {
+        $("#myModal").modal({
+            keyboard: true
+        });
+
+        var viewModal = new kendo.observable({
+            backGroundName: "背景名称",
+            backgroundDescription: "背景描述",
+
+        });
+        kendo.bind($("#myModal"), viewModal);
+
+        //收集预览信息的数据和广告资源信息
+        //用jquery的方法 $.parseJSON() 把js对象转换成json对象
+
+    });
+</script>
+</html>

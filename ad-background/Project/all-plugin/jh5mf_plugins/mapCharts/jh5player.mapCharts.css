@@ -1,0 +1,11 @@
+
+.jh5player-mapCharts {
+  color: #333;
+  display: block;
+  word-wrap: break-word;
+  width: 100%;
+  height: 100%;
+}
+.jh5player-mapCharts.off {
+  display: none;
+}

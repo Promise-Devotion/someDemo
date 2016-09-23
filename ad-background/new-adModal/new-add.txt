@@ -1,0 +1,180 @@
+            <form>
+                <div class="modal-body">
+                    <div class="form-group col-md-6">
+                        <input type="text" name="adName" value="广告名称">
+                        <textarea name="descriptiion" cols="30" rows="10">请添加描述。。。</textarea>
+                        <select name="times" id="times"></select>
+                        <select name="linkType" id="linkType"></select>
+                        <div>
+                            <input type="text">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <div class="ad-content" style="background-color: cyan;width: 100px;height: 100px;margin:0 auto;">
+                            <div>
+                                <div class="adThumbnail-container" style="width: 100px;height:100px;"></div>
+                                <div class="controls">
+                                    <label for="fileName">文件名</label>
+                                    <label class="fileName" id="fileName">鼹鼠</label>
+                                </div>
+                                <div class="controls">
+                                    <label for="fileStyle">类型</label>
+                                    <label class="fileStyle" id="fileStyle">MP4</label>
+                                </div>
+                                <div class="controls">
+                                    <label for="fileSize">大小</label>
+                                    <label class="fileSize" id="fileSize">15M</label>
+                                </div>
+                                <div class="controls">
+                                    <!--<label for="attribute">属性</label>-->
+                                    <label class="fileSize" id="attribute">1080p</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模态框实例</title>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <script src="./js/jquery-1.9.1.js"></script>
+
+    <script src="./js/bootstrap.js"></script>
+    <script src="./js/kendo.all.min.js"></script>
+    <!--<script src="./js/modal.js"></script>-->
+
+    <style>
+        #myModal .modal-body input,select{
+            width: 90%;
+        }
+        #adSource{
+            margin:0 auto;
+        }
+        #adSource .adThumbnail-container{
+            background-color: cyan;
+
+        }
+    </style>
+</head>
+<body>
+
+<h2>创建模态框（Modal）</h2>
+<!-- 按钮触发模态框-->
+<button class="btn" data-toggle="modal" data-target="#myModal">开始演示模态框</button>
+
+<!-- 模态框（Modal）-->
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true">×
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    新建广告
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form action="">
+                    <legend>表单</legend>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <div>
+                                <label for="adName">广告名称</label>
+                            <div class="controls" >
+                                <input type="text" name="adName" id="adName" data-bind="value: adName">
+                            </div>
+                            </div>
+                            <div>
+                                <label for="description">广告描述</label>
+                                <div class="controls">
+                                    <textarea name="description" id="description" cols="30" rows="10" data-bind="value: adDescription"></textarea>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="duration">播放时长</label>
+                                <div class="controls">
+                                    <select name="duration" id="duration"></select>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="fileStyle">文件类型</label>
+                                <div class="controls">
+                                    <select name="fileStyle" id="fileStyle"></select>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="fileUrl">文件URL</label>
+                                <div class="controls">
+                                    <input type="text" id="fileUrl"/>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="localFile">选择本地文件</label>
+                                <div class="controls">
+                                    <input type="button" id="localFile" value="点击选择节目"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <div id="adSource">
+                                <div class="adThumbnail-container" style="width: 100px;height:100px;">
+                                    <a href="#"></a>
+                                </div>
+                                <div class="controls">
+                                    <label>文件名</label>
+                                    <span>鼹鼠</span>
+                                </div>
+                                <div class="controls">
+                                    <label>类型</label>
+                                    <span>MP4</span>
+                                </div>
+                                <div class="controls">
+                                    <label>大小</label>
+                                    <span>15M</span>
+                                </div>
+                                <div class="controls">
+                                    <!--<label for="attribute">属性</label>-->
+                                    <label class="fileSize" id="attribute">属性</label>
+                                    <span>1080P | ANDRIOD</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="form-group modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">CANCEl</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+</body>
+<script>
+    $(document).ready(function() {
+        $("#myModal").modal({
+            keyboard: true
+        });
+
+        var viewModal = new kendo.observable({
+            adName: "广告名称",
+            adDescription: "广告描述",
+            timeArr: [15,30,45,60]
+        });
+        kendo.bind($("#myModal"), viewModal);
+    });
+</script>
+</html>

@@ -1,0 +1,85 @@
+{
+  "name": "basic",
+  "template": "index.html",
+  "baseDir": "/dist/editor/",
+  "savedDataUrl": "/dist/editor/templates/basic/saved-data.json",
+  "maxPluginZIndex": 1000,
+  "plugin": {
+    "plugins": {
+      "example": {
+        "name": "Example",
+        "cls": "ti ti-plug",
+        "icon": "{{baseDir}}src/thirds/wangsj/example/example-icon.png",
+        "source": "{{baseDir}}src/thirds/wangsj/example/jh5player.example.js",
+        "css": "{{baseDir}}src/thirds/wangsj/example/jh5player.example.css"
+      },
+      "pieCharts": {
+        "name": "PieCharts",
+        "cls": "ti ti-plug",
+        "icon": "{{baseDir}}src/thirds/jiangb/pieCharts/pieCharts-icon.png",
+        "source": "{{baseDir}}src/thirds/jiangb/pieCharts/jh5player.pieCharts.js",
+        "css": "{{baseDir}}src/thirds/jiangb/pieCharts/jh5player.pieCharts.css"
+      },
+      "barCharts": {
+        "name": "BarCharts",
+        "cls": "ti ti-plug",
+        "icon": "{{baseDir}}src/thirds/jiangb/barCharts/barCharts-icon.png",
+        "source": "{{baseDir}}src/thirds/jiangb/barCharts/jh5player.barCharts.js",
+        "css": "{{baseDir}}src/thirds/jiangb/barCharts/jh5player.barCharts.css"
+      },
+      "lineCharts": {
+        "name": "LineCharts",
+        "cls": "ti ti-plug",
+        "icon": "{{baseDir}}src/thirds/jiangb/lineCharts/lineCharts-icon.png",
+        "source": "{{baseDir}}src/thirds/jiangb/lineCharts/jh5player.lineCharts.js",
+        "css": "{{baseDir}}src/thirds/jiangb/lineCharts/jh5player.lineCharts.css"
+      },
+      "funnelCharts": {
+        "name": "FunnelCharts",
+        "cls": "ti ti-plug",
+        "icon": "{{baseDir}}src/thirds/jiangb/funnelCharts/funnelCharts-icon.png",
+        "source": "{{baseDir}}src/thirds/jiangb/funnelCharts/jh5player.funnelCharts.js",
+        "css": "{{baseDir}}src/thirds/jiangb/funnelCharts/jh5player.funnelCharts.css"
+      },
+      "radarCharts": {
+        "name": "RadarCharts",
+        "cls": "ti ti-plug",
+        "icon": "{{baseDir}}src/thirds/jiangb/radarCharts/radarCharts-icon.png",
+        "source": "{{baseDir}}src/thirds/jiangb/radarCharts/jh5player.radarCharts.js",
+        "css": "{{baseDir}}src/thirds/jiangb/radarCharts/jh5player.radarCharts.css"
+      },
+      "scatterCharts": {
+        "name": "ScatterCharts",
+        "cls": "ti ti-plug",
+        "icon": "{{baseDir}}src/thirds/jiangb/scatterCharts/scatterCharts-icon.png",
+        "source": "{{baseDir}}src/thirds/jiangb/scatterCharts/jh5player.scatterCharts.js",
+        "css": "{{baseDir}}src/thirds/jiangb/scatterCharts/jh5player.scatterCharts.css"
+      },
+      "mapCharts": {
+        "name": "MapCharts",
+        "cls": "ti ti-plug",
+        "icon": "{{baseDir}}src/thirds/jiangb/mapCharts/mapCharts-icon.png",
+        "source": "{{baseDir}}src/thirds/jiangb/mapCharts/jh5player.mapCharts.js",
+        "css": "{{baseDir}}src/thirds/jiangb/mapCharts/jh5player.mapCharts.css"
+      },
+      "datatable": {
+        "name": "datatable",
+        "cls": "ti ti-plug",
+        "icon": "{{baseDir}}src/thirds/wangsj/datatable/datatable-icon.png",
+        "source": "{{baseDir}}src/thirds/wangsj/datatable/jh5player.datatable.js",
+        "css": "{{baseDir}}src/thirds/wangsj/datatable/jh5player.datatable.css"
+      }
+    }
+  },
+  "editor": {
+    "example": "{{baseDir}}src/thirds/wangsj/example/example-editor.js",
+    "pieCharts": "{{baseDir}}src/thirds/jiangb/pieCharts/pieCharts-editor.js",
+    "barCharts": "{{baseDir}}src/thirds/jiangb/barCharts/barCharts-editor.js",
+    "lineCharts": "{{baseDir}}src/thirds/jiangb/lineCharts/lineCharts-editor.js",
+    "funnelCharts": "{{baseDir}}src/thirds/jiangb/funnelCharts/funnelCharts-editor.js",
+    "radarCharts": "{{baseDir}}src/thirds/jiangb/radarCharts/radarCharts-editor.js",
+    "scatterCharts": "{{baseDir}}src/thirds/jiangb/scatterCharts/scatterCharts-editor.js",
+    "mapCharts": "{{baseDir}}src/thirds/jiangb/mapCharts/mapCharts-editor.js",
+    "datatable": "{{baseDir}}src/thirds/wangsj/datatable/datatable-editor.js"
+  }
+}
