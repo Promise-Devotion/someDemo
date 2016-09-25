@@ -1,0 +1,30 @@
+.jh5player-shape {
+  color: #333;
+  display: block;
+  word-wrap: break-word;
+  width: 100%;
+  height: 100%;
+}
+.jh5player-shape.off {
+  display: none;
+}
+
+.item-shape {
+	width: 80px;
+	height: 80px;
+	margin-left:5px;
+	margin-bottom: 5px;
+	float: left;
+	cursor: pointer;
+}
+.k-widget.k-listview:after {
+	content: ' ';
+	display: table;
+	clear: both;
+}
+.k-widget.k-listview {
+	padding: 2px 0;
+}
+
+
+

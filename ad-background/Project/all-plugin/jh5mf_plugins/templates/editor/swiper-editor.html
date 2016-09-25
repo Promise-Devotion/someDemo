@@ -1,0 +1,53 @@
+<div class="private-editor-container">
+    <button class="btn btn-success btn-block btnPlay" type="button">
+        <span class="play-span glyphicon glyphicon-play" style="display:none;"></span>
+        <span class="pause-span glyphicon glyphicon-pause"></span>
+    </button>
+    <div class="mainSource">
+        <button class="btn btn-info btn-md btnAdd" type="button">增加&nbsp;<span class="glyphicon glyphicon-plus"></span></button>
+        <select class="selectImg" style="display:none;">
+            <option value="1">请选择</option>
+            <option value="/dist/editor/resources/img/jiangb/sliderimg3.jpg">图一</option>
+            <option value="/dist/editor/resources/img/jiangb/sliderimg4.jpg">图二</option>
+            <option value="/dist/editor/resources/img/jiangb/sliderimg5.jpg">图三</option>
+        </select>
+        <button class="agreeBtn btn btn-danger btn-sm" style="display:none;">确定</button>
+    </div>
+
+   <div class="setting well well-sm">
+       <h4 class="text-center">调整位置</h4>
+       <ul id="sortable">
+           <!-- <li class="move-list"><img width="60" height="60" src="/dist/editor/resources/img/jiangb/sliderimg3.jpg" alt=""/><span class="close">&times</span></li>
+           <li class="move-list"><img width="60" height="60" src="/dist/editor/resources/img/jiangb/sliderimg4.jpg" alt=""/><span class="close">&times</span></li>
+           <li class="move-list"><img width="60" height="60" src="/dist/editor/resources/img/jiangb/sliderimg5.jpg" alt=""/><span class="close">&times</span></li> -->
+       </ul>
+   </div>
+
+  <div class="addContent well well-md">
+    <h4 class="text-center">添加内容</h4>
+    <div class="addText">
+      <button class="btn btn-success btn-md textBtn">添加文字</button>
+      <textarea id="mainText" cols="30" rows="5" style="display:none;"></textarea>
+      <button class="btn btn-danger btn-sm textAgreeBtn" style="display:none;">确定</button>
+    </div>
+    <div class="addVideo">
+      <button class="btn btn-success btn-md videoBtn">添加视频</button>
+      <select class="selectVideo" style="display:none;">
+          <option value="1">请选择</option>
+          <option value="/dist/editor/resources/img/jiangb/oceans-clip.mp4">视频一</option>
+      </select>
+      <button class="btn btn-danger btn-sm videoAgreeBtn pull-right" style="display:none;">确定</button>
+    </div>
+  </div>
+
+
+  <div class="controllerBtn well well-sm">
+    <h4 class="text-center">去除默认控制样式</h4>
+    <div>
+      <button class="btn btn-sm btn-warning btn-boult" type="button">去除左右箭头</button>
+      <button class="btn btn-sm btn-warning btn-pagination" type="button">去除分页条</button>
+      <button class="btn btn-sm btn-warning btn-scrollbar" type="button">去除滚动条</button>
+    </div>
+  </div>
+
+</div>

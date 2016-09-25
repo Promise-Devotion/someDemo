@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="./css/aform.css">
+	<script src="./js/aform.js"></script>
+</head>
+<body>
+<div id="output">
+	
+</div>
+	
+</body>
+<script type="text/javascript">
+	var af = new AForm("output",{
+    className:"form-horizontal",
+    fields:{
+        "name":{label:"姓名"},
+        "age":{label:"年龄",type:"number"},
+        "education":{label:"教育经历",fields:{
+            school:{label:"学校"},
+            from:{label:"开始时间",type:"date"},
+            end:{label:"结束时间",type:"date"},
+            degree:{label:"学位",required:false,type:"select",datalist:["学士","硕士",""]}
+        }},
+        "detail": {
+        	"name1": {label: "成绩", field: {
+        		"chinese": {label: "chinese", type: "input"},
+        		"math": {label: "math", type: "input"},
+
+        	}}
+        }
+    }
+});
+af.render({
+    "name": 1,
+    "age": 2,
+    "education":[{
+        school:"中国理工大学",from:"2004-9-1",end:"2008-7-1",degree:"学士"
+    },{
+        school:"中国文化大学",from:"2008-9-1",end:"2010-7-1",degree:"硕士"
+    }],
+    "detail": [{chinese: 100}, {math: 100}]
+});
+</script>
+</html>

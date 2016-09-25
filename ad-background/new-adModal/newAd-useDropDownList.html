@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模态框实例</title>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/simple-line-icons.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/kendo.common-fiori.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/kendo.fiori.min.css">
+
+    <script src="./js/jquery-1.9.1.js"></script>
+    <script src="./js/bootstrap.js"></script>
+    <script src="./js/kendo.all.min.js"></script>
+    <script src="./js/modal.js"></script>
+    <script src="./js/jquery.json.js"></script>
+
+    <style>
+        #myModal .modal-body input,select{
+            width: 100%;
+        }
+        #adSource{
+            margin:0 auto;
+        }
+        #adSource .adThumbnail-container{
+            background-color: cyan;
+        }
+        .adunvisible{
+            display: none;
+        }
+        textarea{
+            width: 100%;
+        }
+        #dropdownlist{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<h2>创建模态框（Modal）</h2>
+<!-- 按钮触发模态框-->
+<div id="modal-btn">
+    <button class="btn" data-toggle="modal">新建广告</button>
+    <button class="btn" data-toggle="modal">编辑广告</button>
+</div>
+
+<!-- 模态框（Modal）-->
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true">×
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    新建广告
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form action="">
+                    <!-- <legend>表单</legend> -->
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <div>
+                                <label for="adName">广告名称</label>
+                                <div class="controls" >
+                                    <input type="text" data-role="autocomplete" name="adName" id="adName" data-bind="value: adName">
+                                </div>
+                            </div>
+                            <div>
+                                <label for="description">广告描述</label>
+                                <div class="controls">
+                                    <textarea name="description" id="description" cols="30" rows="3" data-bind="value: adDescription"></textarea>
+                                </div>
+                            </div>
+                            <div class="demo-section k-content">
+                                <label for="duration">播放时长</label>
+                                <div class="controls">
+                                    <select name="duration" id="duration" data-bind="source: timeArr, value: selectTime"></select>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="fileStyle">文件类型</label>
+                                <div class="controls">
+                                <!-- data-bind="source: fileStyles, value: selectStyle" -->
+                                <input id="dropdownlist" class="k-dropdown-wrap k-state-default" data-bind="source:fileStyles">
+                                    <!-- <select name="fileStyle" id="fileStyle" data-bind="source: fileStyles, value: selectStyle"></select> -->
+                                </div>
+                            </div>
+                            <div class="fileUrl adunvisible">
+                                <label for="fileUrl">文件URL</label>
+                                <div class="controls">
+                                    <input type="text" id="fileUrl" data-bind="value: filewebUrl"/>
+                                </div>
+                            </div>
+                            <div class="selectLocalFile adunvisible">
+                                <label for="localFile">选择本地文件</label>
+                                <div class="controls">
+                                    <input type="button" id="localFile" value="点击选择节目"/>
+                                </div>
+                            </div>
+                            <div class="overviewInfo adunvisible">
+                                <label>预览信息</label>
+                                <div class="controls">
+                                    <span>节目名称：</span>
+                                    <li><span class="projectName">king123</span></li>
+                                    <span>作者</span>
+                                    <li><span class="projectAuthor">by Author</span></li>
+                                    <span>创作时间</span>
+                                    <li><span class="projectCreateTime">2016.7.3</span></li>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <div id="adSource">
+                                <div class="adThumbnail-container" style="width: 100px;height:100px;">
+                                    <a href="#"></a>
+                                </div>
+                                <div class="controls">
+                                    <label>文件名</label>
+                                    <span class="adSourceName">鼹鼠</span>
+                                </div>
+                                <div class="controls">
+                                    <label>类型</label>
+                                    <span class="adSourceStyle">MP4</span>
+                                </div>
+                                <div class="controls">
+                                    <label>大小</label>
+                                    <span class="adSourceSize">15M</span>
+                                </div>
+                                <div class="controls">
+                                    <!--<label for="attribute">属性</label>-->
+                                    <label class="fileSize" id="attribute">属性</label>
+                                    <span class="adSourceAttr">1080P | ANDRIOD</span>
+                                </div>
+                            </div>
+                            <!-- <div>
+                                <h4>显示绑定的数据</h4>
+                                {
+                                    adName: <span data-bind="text: adName"></span>,<br/>
+                                    adDescription: <span data-bind="text: adDescription"></span>,<br/>
+                                    selectTime: <span data-bind="text: selectTime"></span>,<br/>
+                                    selectStyle: <span data-bind="text: selectStyle"></span>,<br/>
+                                    filewebUrl: <span data-bind="text: filewebUrl"></span>,<br/>
+                                    adSourceAttr: <span data-bind="text: adSourceAttr"></span>,<br/>
+                                }
+                            </div> -->
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="form-group modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" data-bind="events: onsubmit">OK</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">CANCEl</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+</body>
+
+<script>
+    $(document).ready(function() {
+        $("#modal-btn").on("click", "button", function() {
+            $('#myModal .modal-title').empty().text($(this).text());
+            $('#myModal').modal();
+        });
+
+
+        $("#fileStyle").change(function() {
+            if($("#fileStyle").find("option:selected").text() == "无") {
+                $(".fileUrl,.selectLocalFile,.overviewInfo").addClass("adunvisible");
+            }
+            else if($("#fileStyle").find("option:selected").text() == "webURL") {
+                $(".fileUrl").removeClass("adunvisible");
+                $(".selectLocalFile,.overviewInfo").addClass("adunvisible");
+            }
+            else if($("#fileStyle").find("option:selected").text() == "本地节目") {
+                $(".fileUrl,.localFile,.overviewInfo").addClass("adunvisible");
+                $(".localFile,.overviewInfo,.selectLocalFile").removeClass("adunvisible");
+            }
+        });
+                function onSelect(e) {};
+        function onChange(e) {
+            if(dataItem.value == "无") {
+                $(".fileUrl,.selectLocalFile,.overviewInfo").addClass("adunvisible");
+            }
+            else if(dataItem.value == "webURL") {
+                $(".fileUrl").removeClass("adunvisible");
+                $(".selectLocalFile,.overviewInfo").addClass("adunvisible");
+            }
+            else if(dataItem.value == "本地节目") {
+                $(".fileUrl,.localFile,.overviewInfo").addClass("adunvisible");
+                $(".localFile,.overviewInfo").removeClass("adunvisible");
+            }
+        };
+        function onOpen() {
+            console.log("event: open");
+        };
+
+        function onClose() {
+            console.log("event: close");
+        };
+
+        function onSelect(e) {
+
+            var dataItem = this.dataItem(e.item);
+            console.log("event :: select (" + dataItem.text + " : " + dataItem.value + ")" );
+
+        };
+
+        function onDataBound(e) {                          
+            console.log("event :: dataBound");            
+        };
+
+        function onFiltering(e) {
+
+            console.log("event :: filtering");
+
+        };
+
+        var data = [
+            {text: "无", value:"无"},
+            {text: "webURL", value:"webURL"},
+            {text: "本地节目", value:"本地节目"}
+        ];
+
+
+        $("#dropdownlist").kendoDropDownList({
+            dataTextField: "text",
+            dataValueField: "value",
+            filter: "startswith",
+            dataSource: data,
+            select: onSelect,
+            change: onChange,
+            close: onClose,
+            open: onOpen,
+            dataBound:onDataBound
+        });
+
+
+        
+        var viewModal = new kendo.observable({
+            adName: "广告名称",
+            adDescription: "广告描述",
+            timeArr: [15,30,45,60],
+            selectTime: 15,
+            fileStyles: ["无", "webURL", "本地节目"],
+            selectStyle: "无",
+            filewebUrl:""
+
+        });
+        kendo.bind($("#myModal"), viewModal);
+
+        if($("fileStyle").find("option:selected").text() == "webURL") {
+            $(".fileUrl").removeClass("adunvisible");
+            $(".selectLocalFile,.overviewInfo").addClass("adunvisible");
+        }
+        if($("fileStyle").find("option:selected").text() == "本地节目") {
+            $(".fileUrl,.localFile,.overviewInfo").addClass("adunvisible");
+            $(".localFile,.overviewInfo").removeClass("adunvisible");
+        }
+
+        //点击OK按钮，收集预览信息的数据和广告资源信息
+        $(".modal-footer .btn-primary").click(function() {
+            var obj = {};
+            obj.overview = {};
+            obj.adSource = {};
+            obj.projectName = $(".overviewInfo .projectName").html();
+            obj.projectAuthor = $(".overviewInfo .projectAuthor").html("简恒科技");
+            obj.projectCreateTime = $(".overviewInfo .projectCreateTime").html();
+            obj.adSourceName = $("#adSource .adSourceName").html();
+            obj.adSourceStyle = $("#adSource .adSourceStyle").html();
+            obj.adSourceSize = $("#adSource .adSourceSize").html("200M");
+            obj.adSourceAttr = $("#adSource .adSourceAttr").html();
+            $.extend(viewModal, obj);
+            // var a = $.toJSON(aa);
+            // console.log(a);
+            console.log(viewModal);
+            // return viewModal;
+
+        })
+
+    });
+</script>
+</html>

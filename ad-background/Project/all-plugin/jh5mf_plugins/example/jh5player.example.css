@@ -1,0 +1,8 @@
+.jh5player-example {
+  color: #333;
+  display: block;
+  word-wrap: break-word;
+}
+.jh5player-example.off {
+  display: none;
+}

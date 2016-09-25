@@ -1,0 +1,8 @@
+.jh5player-myvideo {
+  color: #333;
+  display: block;
+  word-wrap: break-word;
+}
+.jh5player-myvideo.off {
+  display: none;
+}
